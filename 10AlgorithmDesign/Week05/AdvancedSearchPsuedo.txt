@@ -1,0 +1,21 @@
+GET file_name
+OPEN file_name into a variable named f
+LOAD f into a json file named data
+GET word_to_search
+word_found <- advancedSearch(data, word_to_search)
+advancedSearch(data, word_to_search)
+    start <- 0
+    end <- len(data) – 1
+    WHILE (start <= end)
+            Mid = (start + end) / 2
+            if(data[mid] > word_to_search)
+                end = mid – 1
+            elif(data[mid] < word_to_search)
+                start = mid + 1
+            else
+                return true
+    return false
+IF (word_found)
+	PUT word was found
+ELSE
+	PUT word was not found

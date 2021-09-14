@@ -1,0 +1,21 @@
+PROMPT for filename
+GET filename
+
+file <- OPEN(filename)
+if error
+    PUT error message
+    QUIT
+
+data_text <- file.read()
+data_JSON <- json.loads(data_text)
+data <- data_JSON['array']
+
+# A FOR i <- 0 ... len(data) - 1
+# B    i_pivot <- 0
+# C    FOR j <- i + 1 ... len(data)
+         IF data[j] < data[i_pivot]
+# D            i_pivot <- j
+       IF i_pivot != i
+# E        data[i], data[i_pivot] <- data[i_pivot], data[i]
+
+PUT data
